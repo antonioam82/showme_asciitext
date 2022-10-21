@@ -9,18 +9,22 @@ class app():
         self.window = tk.Tk()
         self.window.title("ASCII TEXT")
         self.window.geometry("1180x718")
+        self.window.configure(background="gray90")
+        
 
         self.current_dir = tk.StringVar()
         self.current_dir.set(os.getcwd())
         
         self.entryDir = tk.Entry(self.window,width=196,textvariable=self.current_dir)
         self.entryDir.place(x=0,y=0)
-        self.ascii_visor = sct.ScrolledText(self.window,width=110,height=30)
+        self.ascii_visor = sct.ScrolledText(self.window,width=110,height=30,bg="black",fg="white")
         self.ascii_visor.place(x=10,y=30)
+        #self.ascii_visor.insert(tk.END,pyfiglet.figlet_format("hello",font="isometric3",justify="center"))
 
         self.window.mainloop()
 
 if __name__=="__main__":
     app()
+
 
 
